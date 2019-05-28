@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">em_project</string>
+
+    <string name="main_menu">Main Menu in Development</string>
 </resources>
