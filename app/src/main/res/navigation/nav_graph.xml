@@ -8,5 +8,17 @@
     <fragment android:id="@+id/mainMenu"
               android:name="com.m68476521.mike.em_project.MainMenu"
               android:label="fragment_main_menu"
-              tools:layout="@layout/fragment_main_menu"/>
+              tools:layout="@layout/fragment_main_menu">
+        <action android:id="@+id/action_mainMenu_to_detailFragment"
+                app:destination="@id/detailFragment"/>
+    </fragment>
+    <fragment android:id="@+id/detailFragment"
+              android:name="com.m68476521.mike.em_project.detail.DetailFragment"
+              android:label="fragment_detail"
+              tools:layout="@layout/fragment_detail">
+        <argument
+                android:defaultValue="0"
+                android:name="id"
+                app:argType="integer"/>
+    </fragment>
 </navigation>
