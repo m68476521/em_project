@@ -2,4 +2,9 @@
     <string name="app_name">em_project</string>
 
     <string name="main_menu">Main Menu in Development</string>
+    <string name="comics">Comics</string>
+    <string name="series">Series</string>
+    <string name="stories">Stories</string>
+    <string name="events">Events</string>
+    <string name="urls">Urls</string>
 </resources>
