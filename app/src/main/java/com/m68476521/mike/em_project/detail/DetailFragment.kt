@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.m68476521.mike.em_project.R
 import com.m68476521.mike.em_project.utils.DataModel
@@ -37,5 +38,10 @@ class DetailFragment : Fragment() {
         stories.nameDetail.text = getString(R.string.stories)
         events.nameDetail.text = getString(R.string.events)
         urls.nameDetail.text = getString(R.string.urls)
+        comics.setOnClickListener {
+            val goToComics = DetailFragmentDirections.actionDetailFragmentToComicsFragment()
+            goToComics.id = args.id
+            it.findNavController().navigate(goToComics)
+        }
     }
 }

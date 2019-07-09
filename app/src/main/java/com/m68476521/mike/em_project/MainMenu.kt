@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.m68476521.mike.em_project.mainMenu.MainMenuAdapter
 import com.m68476521.mike.em_project.utils.DataModel
-import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.fragment_main_menu.*
 
 /**

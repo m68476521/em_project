@@ -20,11 +20,24 @@
                 android:defaultValue="0"
                 android:name="id"
                 app:argType="integer"/>
+        <action android:id="@+id/action_detailFragment_to_comicsFragment" app:destination="@id/comicsFragment"/>
     </fragment>
     <fragment android:id="@+id/starFragment"
               android:name="com.m68476521.mike.em_project.StarFragment"
               android:label="fragment_star"
               tools:layout="@layout/fragment_star">
-        <action android:id="@+id/action_starFragment_to_mainMenu" app:destination="@id/mainMenu"/>
+        <action android:id="@+id/action_starFragment_to_mainMenu"
+                app:destination="@id/mainMenu"
+                app:popUpTo="@+id/starFragment"
+                app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment android:id="@+id/comicsFragment"
+              android:name="com.m68476521.mike.em_project.comics.ComicsFragment"
+              android:label="fragment_comics"
+              tools:layout="@layout/fragment_comics">
+        <argument
+                android:defaultValue="0"
+                android:name="id"
+                app:argType="integer"/>
     </fragment>
 </navigation>
