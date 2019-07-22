@@ -33,6 +33,6 @@ class MainMenu : Fragment() {
         recyclerMenu.itemAnimator = DefaultItemAnimator()
         recyclerMenu.adapter = adapter
         val model = ViewModelProviders.of(requireActivity()).get(DataModel::class.java)
-        adapter.swapResults(model.results)
+        adapter.swapResults(model.listOfComics.data.results)
     }
 }

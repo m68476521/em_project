@@ -31,8 +31,8 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         model = ViewModelProviders.of(requireActivity()).get(DataModel::class.java)
-        val item = model.results.find { it.id == args.id }
-        name.text = item?.name
+        val item = model.listOfComics.data.results.find { it.id == args.id }
+        name.text = item?.title
         comics.nameDetail.text = getString(R.string.comics)
         series.nameDetail.text = getString(R.string.series)
         stories.nameDetail.text = getString(R.string.stories)

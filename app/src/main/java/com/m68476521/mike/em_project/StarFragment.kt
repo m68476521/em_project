@@ -35,12 +35,12 @@ class StarFragment : Fragment() {
 
     private fun fetchData() {
         ApiManager.setUp()
-        val eventsDisposable = ApiManager.api.getPublicCharacters(10)
+        val eventsDisposable = ApiManager.api.getComics(20)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .subscribe({
                 val model = ViewModelProviders.of(requireActivity()).get(DataModel::class.java)
-                model.results = it.data.results
+                model.listOfComics = it
                 view?.findNavController()?.navigate(StarFragmentDirections.actionStarFragmentToMainMenu())
             }, {
                 it.printStackTrace()

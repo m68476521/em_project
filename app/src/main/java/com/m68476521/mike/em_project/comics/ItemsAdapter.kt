@@ -4,11 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 
 import androidx.recyclerview.widget.RecyclerView
+import com.m68476521.mike.em.ComicSummary
 import com.m68476521.mike.em.ItemA
+import com.m68476521.mike.em.Url
 import com.m68476521.mike.em_project.R
 
 class ItemsAdapter : RecyclerView.Adapter<ItemHolder>() {
-    private var listOfItems: List<ItemA> = emptyList()
+    private var listOfItems: List<ComicSummary> = emptyList()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
         return ItemHolder(
             LayoutInflater.from(parent.context).inflate(
@@ -25,7 +27,7 @@ class ItemsAdapter : RecyclerView.Adapter<ItemHolder>() {
 
     override fun getItemCount(): Int = listOfItems.size
 
-    fun setItems(items: List<ItemA>) {
+    fun setItems(items: List<ComicSummary>) {
         if (listOfItems == items)
             return
 

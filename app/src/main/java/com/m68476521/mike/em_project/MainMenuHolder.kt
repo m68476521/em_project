@@ -3,15 +3,15 @@ package com.m68476521.mike.em_project
 import android.view.View
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.m68476521.mike.em.Results
+import com.m68476521.mike.em.Comic
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_main_menu.view.*
 
 class MainMenuHolder(view: View) : RecyclerView.ViewHolder(view) {
-    fun bindResult(result: Results) = with(itemView) {
-        itemView.name.text = result.name
-        itemView.description.text = result.description
-        var imageSource = "${result.thumbnail.path}.${result.thumbnail.extension}"
+    fun bindResult(comic: Comic) = with(itemView) {
+        itemView.name.text = comic.title
+        itemView.description.text = comic.description
+        var imageSource = "${comic.thumbnail.path}.${comic.thumbnail.extension}"
         imageSource = imageSource.replace("http", "https")
         Picasso.get()
             .load(imageSource)
@@ -19,7 +19,7 @@ class MainMenuHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         setOnClickListener {
             val goToDetails = MainMenuDirections.actionMainMenuToDetailFragment()
-            goToDetails.id = result.id
+            goToDetails.id = comic.id
             it.findNavController().navigate(goToDetails)
         }
     }
